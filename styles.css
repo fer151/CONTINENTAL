@@ -500,3 +500,183 @@ footer {
   transform: scale(1.15);
   filter: brightness(1.2);
 }
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #001f3f 0%, #ff6b00 60%, #ffd700 100%);
+  color: white;
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+header.scrolled {
+  background: linear-gradient(135deg, #00122b 0%, #e65c00 60%, #e6b800 100%);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+}
+
+.logo-container img {
+  width: 170px;
+  height: auto;
+  display: block;
+}
+
+.logo-text {
+  line-height: 1.1;
+}
+
+.logo-text span {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #ffd700;
+}
+
+.logo-text small {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #00c853;
+  letter-spacing: 1px;
+}
+
+nav {
+  margin-left: auto;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 3rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -8px;
+  left: 0;
+  background: linear-gradient(#ff6b00, #ffd700, #00c853);
+  transition: width 0.4s;
+}
+
+nav a:hover {
+  color: #ffea80;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    padding: 0.8rem 0;
+  }
+
+  .header-content {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .logo-container {
+    gap: 10px;
+  }
+
+  .logo-container img {
+    width: 95px;
+  }
+
+  .logo-text span {
+    font-size: 1.2rem;
+  }
+
+  .logo-text small {
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    margin-left: 0;
+    display: none;
+  }
+
+  nav.active {
+    display: block;
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(0, 31, 63, 0.95);
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+  }
+
+  nav a {
+    font-size: 1rem;
+    display: block;
+  }
+
+  nav a::after {
+    display: none;
+  }
+
+  .hero {
+    padding: 120px 20px 80px;
+    background-attachment: scroll;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
